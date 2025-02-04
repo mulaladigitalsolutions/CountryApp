@@ -1,5 +1,5 @@
 import { NavBarComponent } from './../../nav-bar/nav-bar.component';
-import { CountryService } from './../../country.service';
+import { CountryService } from '../../services/country.service';
 import { Component } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -22,12 +22,5 @@ export class CountryCardComponent {
     this.countryService.getCountries().subscribe(data => {
       this.countries = data;
     });
-  }
-
-
-
-  onCountryClick(country: any){
-    alert(country.name)
-    this.router.navigate(['/country', country.name]);
   }
 }
